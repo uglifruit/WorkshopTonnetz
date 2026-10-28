@@ -1,0 +1,59 @@
+draft: true
+Name: TONNETZ
+short-description: A generative harmonic synthesiser - neo-Riemannian chord navigation with a voice-led, morphing three-voice chord and an anticipating melody
+Language: C++ (ComputerCard)
+Creator: Andy Jenkinson (uglifruit)
+Version: "0.1.0"
+Status: In development
+License: CC-BY-4.0
+repository: https://github.com/uglifruit/WorkshopTonnetz
+Editor: none
+date-created: 2026-10-27
+date-updated: 2026-10-27
+
+contact:
+  social:
+    github: https://github.com/uglifruit
+
+uf2:
+  - path: UF2/tonnetz.uf2
+    name: TONNETZ 0.1.0
+
+tags:
+  - generative
+  - harmony
+  - chords
+  - melody
+  - synthesis
+
+summary: |
+  TONNETZ walks the Tonnetz - the network of the 24 major and minor triads
+  linked by the neo-Riemannian P, L and R transformations - and plays it as a
+  slowly morphing three-voice chord on Audio Out 1, with a melody on Audio
+  Out 2 that knows where the harmony has been, where it is, and where it is
+  about to go.<br><br>
+
+  There are no preset progressions. Every next chord is chosen by scoring
+  each reachable chord on voice leading, fit with the inferred key, a phrase
+  shape that departs and returns, avoidance of trivial back-and-forth, and an
+  optional target note from CV - then sampling from those scores. The card
+  keeps three harmonic memories at once: the previous, current and planned
+  chord for the melody; a responsive local-scale estimate; and a slow,
+  inertial sense of the tonal centre.<br><br>
+
+  The next chord is planned the moment the current one starts and frozen at
+  the commit point, so the melody can anticipate it: notes that prepare the
+  coming harmony grow more likely as the change approaches. Chord voices are
+  voice-led for minimum movement and glide in pitch independently - from an
+  instant change to four-second glides that overlap and turn the harmony
+  into a morphing drone.<br><br>
+
+  Middle switch: Main = wander/gravity, X = chord glide, Y = melodic
+  anticipation. Up: BPM, melody density, phrase length. Down (hold): CV pull
+  (strict at the top), melody rhythm, tonal inertia; a quick tap of Down
+  resets to the home chord. Pulse In 1 = clock, Pulse In 2 = reset, CV In 1 =
+  1V/oct harmonic target, CV In 2 = wander. CV Out 1/2 = chord root and
+  melody pitch, Pulse Out 1/2 = chord-change and note triggers.<br><br>
+
+  Still in development - builds clean and passes its host test suite, not
+  yet played on hardware.

@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+build-*/
+tests/build/
+tools/build/
+
+# Local .uf2 builds, kept out of the repo. A RELEASED binary lives in UF2/
+# and is committed deliberately; FLASHME/ is just what you drag onto the card,
+# refreshed by every build.
+FLASHME/*.uf2
+
+# Rendered reference audio from tools/render - regenerate as needed.
+tools/out/
+
+# Editor / OS noise
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
